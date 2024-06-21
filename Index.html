@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perosnal Portfolio Website - Nikhil Maganti</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/cc2373f1b8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container"></div>
+        <nav>
+            <img src="PersonalPortfolio/Images/namelogo.png" class="namelogo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Software Dev and UI/UX Designer</p>
+            <h1>Hello World, I'm <span>Nikhil</span> Maganti.<br>A Sr. Threat Intel Analyst currently residing in Seattle! </h1>
+        </div>
+    <div>
+</div>
+
+<!-- -------------about-------------- -->
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="PersonalPortfolio/Images/user.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>I am a dynamic and seasoned cyber intelligence and risk expert in the field of threat intelligence and risk management. 
+                I am an iron fist in a velvet glove when it comes to identifying, analyzing, and mitigating cyber threats, contributing to the fortified security posture of both small and large scale organizations like Amazon. 
+                My analytical skills, combined with an extensive knowledge of the cybersecurity landscape, allow me to effectively dissect complex data and turn it into actionable insights. 
+                I have worked in fast-paced, high-pressure environments, delivering strategic and operational threat intelligence to protect critical information and infrastructure. 
+                Being a lifelong learner, I continuously embrace new technologies and methodologies to combat evolving cyber threats. I am always keen to connect with other cybersecurity professionals, seeking opportunities for collaboration, knowledge exchange, and further strengthening the security community.</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI/UX</span><br>Designing and Developing Web Interfaces</li>
+                        <li><span>Python Software Development</span><br>Developing Python Scripts/Apps</li>
+                        <li><span>SQL</span><br>Managing Data</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2020 - Current</span><br>Sr. Intelligence Analyst at Amazon.com</li>
+                        <li><span>2019</span><br>Cyber Risk Consultant at Entreda, Inc.</li>
+                        <li><span>2018</span><br>Cyber Security Analyst at Senseon</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2016</span><br>BS in Security and Risk Analysis from Penn State</li>
+                        <li><span>2016</span><br>BS in Information Sciences and Tech from Penn State</li>
+                        <li><span>2016</span><br>NSA Certification in Security and Risk</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- -----------Services------------ -->
+
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>Beautifully Designed and user friendly front end. The websites developed through HTML, CSS, and JS provisde users with ease of use 
+                    and visual appeal. Time to completion depends on complexity but my genuine interest in this feild provides infinite motivation to insist on the highest standards and provide top quality work.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div>
+                <i class="fas fa-laptop-code"></i>
+                <h2>Automation and Data Analysis</h2>
+                <p>Using python to automate our lives away. Implementing solutions to expedite seeminly tedious tasks by leveraging an algorithmic mindset to do so.
+                    Past initiatives include web scrapers, identifiying anomalies in large datasets, and even a random password generator.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div>
+                <i class="fas fa-database"></i>
+                <h2>Data Handling</h2>
+                <p>Making it easy to work with data and make more informed strategy, operations, and business decisions. 
+                    Able to store, retrieve, manage and manipulate data within a database management system and get it prepped for analysis and visualization.</p>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- -----------Portfolio------------ -->
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="PersonalPortfolio/Images/work-1.png">
+                <div class="layer">
+                    <h3>Python Automation and Data Analysis</h3>
+                    <p>This folder shocasing my body of work spans everything from identifying anomalous activity within a data set and visualize it via a graphical format to web scrapers.</p>
+                    <a href="https://github.com/nikmags/PythonProjects"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="PersonalPortfolio/Images/work-2.png">
+                <div class="layer">
+                    <h3>SQL Projects</h3>
+                    <p>This folder provides examples of the different work completed in SQL inlcuding data handling and transformations.</p>
+                    <a href="https://github.com/nikmags/SQL"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="PersonalPortfolio/Images/work-3.png">
+                <div class="layer">
+                    <h3>Web Development</h3>
+                    <p>See the front end structure I built to for my own personal portfolio site that exhibits minimalistic yet feature heavy user freindly design.</p>
+                    <a href="https://github.com/nikmags/Web-Dev"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="https://github.com/nikmags" class="btn">See More</a>
+    </div>
+</div>
+
+<!-- -----------Contact------------ -->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fas fa-paper-plane"></i> nikhil.maganti23@gmail.com</p>
+                <p><i class="fas fa-mobile-alt"></i> 9494127373</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/nikhil.maganti/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/nikhil-maganti-b647b9100/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/nikmags"><i class="fab fa-github-square"></i></a>
+                </div>
+                <a href="PersonalPortfolio/Images/Resume_NikhilMv2.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Made by Nikhil <i class="fas fa-user-astronaut"></i></p>
+    </div>
+</div>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyfVAWVvl9GwJ5YvQknVZamGlRZZ1e_xo5CL1Y1-kmwT-akZCDnsMttenXQw6adbGHRyw/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Your message was successfully sent!"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
