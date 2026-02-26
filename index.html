@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikhil Maganti — Security & Intelligence Professional</title>
+    <meta name="description" content="Senior Security Risk & Fraud Intelligence Professional with 5+ years of experience at Amazon and ID.me. Expertise in threat intelligence, fraud detection, and data-driven risk mitigation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #111113;
+            --bg-card: #18181b;
+            --bg-card-hover: #1e1e22;
+            --border: #27272a;
+            --text-primary: #fafafa;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --green: #22c55e;
+            --green-muted: rgba(34, 197, 94, 0.1);
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --max-width: 1100px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ===== Reset ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== Utility ===== */
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+        .section { padding: 100px 0; }
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 48px;
+            line-height: 1.2;
+        }
+
+        /* ===== Navigation ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0 24px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(10, 10, 11, 0.8);
+            border-bottom: 1px solid transparent;
+            transition: border-color var(--transition);
+        }
+        nav.scrolled { border-bottom-color: var(--border); }
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+        .nav-logo {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .nav-logo span { color: var(--accent-light); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color var(--transition);
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-toggle { display: none; background: none; border: none; color: var(--text-primary); font-size: 20px; cursor: pointer; }
+
+        /* ===== Hero ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-content { position: relative; z-index: 1; }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: var(--green-muted);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--green);
+            margin-bottom: 28px;
+        }
+        .hero-badge .dot {
+            width: 6px; height: 6px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 24px;
+        }
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, var(--accent-light), #a78bfa, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-desc {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            max-width: 560px;
+            margin-bottom: 40px;
+        }
+        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+        .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover { border-color: var(--text-muted); color: var(--text-primary); }
+        .hero-meta {
+            margin-top: 64px;
+            display: flex;
+            gap: 48px;
+        }
+        .hero-meta-item .number {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .hero-meta-item .label {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* ===== About ===== */
+        #about { border-top: 1px solid var(--border); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+        .about-text p { margin-bottom: 20px; font-size: 15px; }
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+        .highlight-card {
+            padding: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all var(--transition);
+        }
+        .highlight-card:hover { border-color: var(--accent); background: var(--bg-card-hover); }
+        .highlight-card i { color: var(--accent-light); font-size: 20px; margin-bottom: 10px; }
+        .highlight-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        .highlight-card p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+        /* ===== Experience ===== */
+        #experience { border-top: 1px solid var(--border); }
+        .exp-list { display: flex; flex-direction: column; gap: 24px; }
+        .exp-card {
+            padding: 32px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            transition: all var(--transition);
+            position: relative;
+        }
+        .exp-card:hover { border-color: rgba(99, 102, 241, 0.3); background: var(--bg-card-hover); }
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            gap: 16px;
+        }
+        .exp-company {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .exp-role {
+            font-size: 15px;
+            color: var(--accent-light);
+            font-weight: 500;
+            margin-top: 2px;
+        }
+        .exp-date {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-muted);
+            white-space: nowrap;
+            padding: 4px 10px;
+            background: var(--bg-primary);
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+        .exp-bullets { list-style: none; margin-top: 16px; }
+        .exp-bullets li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            padding: 6px 0 6px 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+        .exp-bullets li::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 14px;
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: 0.6;
+        }
+        .exp-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+        .exp-tag {
+            font-size: 11px;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: var(--accent-glow);
+            color: var(--accent-light);
+            border: 1px solid rgba(99, 102, 241, 0.15);
+        }
+
+        /* ===== Skills ===== */
+        #skills { border-top: 1px solid var(--border); }
+        .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .skill-group {
+            padding: 28px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            transition: all var(--transition);
+        }
+        .skill-group:hover { border-color: rgba(99, 102, 241, 0.3); }
+        .skill-group h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .skill-group h3 i { color: var(--accent-light); font-size: 16px; }
+        .skill-items { display: flex; flex-wrap: wrap; gap: 8px; }
+        .skill-item {
+            font-size: 12px;
+            font-weight: 500;
+            padding: 5px 12px;
+            border-radius: 6px;
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            transition: all var(--transition);
+        }
+        .skill-item:hover { border-color: var(--accent); color: var(--text-primary); }
+
+        /* ===== Projects ===== */
+        #projects { border-top: 1px solid var(--border); }
+        .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .project-card {
+            padding: 28px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            transition: all var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover { border-color: rgba(99, 102, 241, 0.3); transform: translateY(-4px); }
+        .project-icon {
+            width: 44px; height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: var(--accent-glow);
+            color: var(--accent-light);
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        .project-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        .project-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--accent-light);
+            text-decoration: none;
+            transition: gap var(--transition);
+        }
+        .project-link:hover { gap: 10px; }
+
+        /* ===== Certifications ===== */
+        #certs { border-top: 1px solid var(--border); }
+        .certs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .cert-card {
+            padding: 24px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            text-align: center;
+            transition: all var(--transition);
+        }
+        .cert-card:hover { border-color: rgba(99, 102, 241, 0.3); }
+        .cert-card i { font-size: 28px; color: var(--accent-light); margin-bottom: 12px; }
+        .cert-card h4 { font-size: 13px; font-weight: 600; color: var(--text-primary); line-height: 1.4; }
+        .cert-card p { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+
+        /* ===== Contact ===== */
+        #contact { border-top: 1px solid var(--border); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+        .contact-info h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+        .contact-info p { font-size: 15px; margin-bottom: 32px; }
+        .contact-links { display: flex; flex-direction: column; gap: 16px; }
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color var(--transition);
+        }
+        .contact-link:hover { color: var(--text-primary); }
+        .contact-link i {
+            width: 36px; height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--accent-light);
+            font-size: 14px;
+        }
+        .contact-form { display: flex; flex-direction: column; gap: 16px; }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            font-size: 14px;
+            outline: none;
+            transition: border-color var(--transition);
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus { border-color: var(--accent); }
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder { color: var(--text-muted); }
+        .contact-form textarea { resize: vertical; min-height: 120px; }
+        #form-msg {
+            font-size: 13px;
+            color: var(--green);
+            min-height: 20px;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 16px; }
+        .footer-links a {
+            color: var(--text-muted);
+            font-size: 18px;
+            transition: color var(--transition);
+        }
+        .footer-links a:hover { color: var(--accent-light); }
+        footer p { font-size: 13px; color: var(--text-muted); }
+
+        /* ===== Scroll Animations ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== Mobile ===== */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            right: 0;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 24px;
+            z-index: 99;
+        }
+        .mobile-menu.open { display: block; }
+        .mobile-menu a {
+            display: block;
+            padding: 12px 0;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .mobile-menu a:hover { color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-toggle { display: block; }
+            .hero h1 { letter-spacing: -1px; }
+            .hero-meta { gap: 24px; flex-wrap: wrap; }
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .certs-grid { grid-template-columns: 1fr 1fr; }
+            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+            .exp-header { flex-direction: column; }
+            .section { padding: 64px 0; }
+        }
+        @media (max-width: 480px) {
+            .about-highlights { grid-template-columns: 1fr; }
+            .certs-grid { grid-template-columns: 1fr; }
+            .hero-meta { flex-direction: column; gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="#" class="nav-logo">nikhil<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+            <i class="fas fa-bars" id="menu-icon"></i>
+        </button>
+    </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#experience" onclick="closeMenu()">Experience</a>
+    <a href="#skills" onclick="closeMenu()">Skills</a>
+    <a href="#projects" onclick="closeMenu()">Projects</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge"><span class="dot"></span> Open to opportunities</div>
+            <h1>Security &amp; Intelligence<br><span class="gradient">Professional.</span></h1>
+            <p class="hero-desc">
+                Senior Fraud Intelligence Analyst building scalable defenses against cybercrime and financial abuse at the intersection of data, security, and AI. Currently at ID.me, previously Amazon.
+            </p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get in Touch</a>
+                <a href="https://www.linkedin.com/in/nikhil-maganti-b647b9100/" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/nikmags" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <div class="number">5+</div>
+                    <div class="label">Years Experience</div>
+                </div>
+                <div class="hero-meta-item">
+                    <div class="number">$8.5M+</div>
+                    <div class="label">Fraud Savings Delivered</div>
+                </div>
+                <div class="hero-meta-item">
+                    <div class="number">40%</div>
+                    <div class="label">Criminal Exposure Reduced</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about" class="section">
+    <div class="container">
+        <div class="fade-in">
+            <div class="section-label">About</div>
+            <div class="section-title">Building safer digital ecosystems.</div>
+        </div>
+        <div class="about-grid">
+            <div class="fade-in">
+                <div class="about-text">
+                    <p>I'm a strategic and analytical security professional who thrives at the intersection of threat intelligence, fraud prevention, and data analysis. With deep experience at Amazon and ID.me, I specialize in identifying patterns in adversarial behavior and translating them into scalable defenses.</p>
+                    <p>My approach combines technical depth — SQL, Python, and intelligence platforms — with cross-functional leadership to drive measurable impact. I've led programs that saved millions in fraud losses, built governance frameworks from scratch, and mentored the next generation of analysts.</p>
+                    <p>I'm passionate about working at top-tier tech companies where security and AI converge, and I'm always exploring how emerging technologies can stay ahead of evolving threats.</p>
+                </div>
+            </div>
+            <div class="fade-in">
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <i class="fas fa-shield-halved"></i>
+                        <h4>Threat Intelligence</h4>
+                        <p>OSINT, dark web monitoring, actor attribution, and proactive threat hunting</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Data-Driven Risk</h4>
+                        <p>Analyzing 1M+ transactions monthly to surface fraud trends and treatment flows</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-robot"></i>
+                        <h4>AI & Automation</h4>
+                        <p>Leveraging AI tools, Python, and ML feedback loops to scale detection</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-users"></i>
+                        <h4>Cross-Functional Leadership</h4>
+                        <p>Partnering with Engineering, Data Science, and C-suite to ship defenses</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience -->
+<section id="experience" class="section">
+    <div class="container">
+        <div class="fade-in">
+            <div class="section-label">Experience</div>
+            <div class="section-title">Where I've made an impact.</div>
+        </div>
+        <div class="exp-list">
+            <!-- ID.me -->
+            <div class="exp-card fade-in">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-company">ID.me</div>
+                        <div class="exp-role">Sr. Fraud Intelligence Analyst</div>
+                    </div>
+                    <span class="exp-date">Oct 2025 — Present</span>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Developed and implemented a fraud framework and governance structure for the entirety of ID.me Shop, resulting in an estimated 80% increase in proactively captured fraud</li>
+                    <li>Built Snowflake-based automation scripts that reduced manual investigation workload by 43%, cut false positive rates by 43%, and captured ~$40K in annualized savings</li>
+                    <li>Led high-complexity fraud investigations leveraging large datasets, AI, and analytical skills for rapid and accurate threat/risk deterrence</li>
+                    <li>Collaborated with Data Science, Engineering, Security Operations, and C-suite to stand up features, programs, and governance structures</li>
+                </ul>
+                <div class="exp-tags">
+                    <span class="exp-tag">Snowflake</span>
+                    <span class="exp-tag">Fraud Detection</span>
+                    <span class="exp-tag">AI</span>
+                    <span class="exp-tag">Governance</span>
+                </div>
+            </div>
+
+            <!-- Amazon Sr. -->
+            <div class="exp-card fade-in">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-company">Amazon.com, Inc.</div>
+                        <div class="exp-role">Sr. Threat & Risk Intelligence Analyst</div>
+                    </div>
+                    <span class="exp-date">Jul 2020 — Feb 2025</span>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Conducted threat actor attribution and pattern recognition on abuse campaigns targeting Amazon's payment and customer systems, reducing criminal exposure by 40%</li>
+                    <li>Designed buyer fraud and abuse detection models under the OSCAR program, saving ~$8.5M through proactive mitigation strategies</li>
+                    <li>Analyzed 1M+ monthly financial transactions to identify root-cause fraud trends, enabling 3+ new treatment flows that reduced fraud velocity by 15%</li>
+                    <li>Led dark web monitoring initiatives to uncover compromised accounts, payment fraud schemes, and fraud-actor infrastructure</li>
+                    <li>Produced 50+ OSINT-informed intelligence briefs including threat analysis, POI tracking, and high-profile event coverage</li>
+                    <li>Coordinated 30+ global cross-functional groups to operationalize fraud intelligence sharing and drive risk mitigation</li>
+                </ul>
+                <div class="exp-tags">
+                    <span class="exp-tag">OSINT</span>
+                    <span class="exp-tag">Dark Web</span>
+                    <span class="exp-tag">MITRE ATT&CK</span>
+                    <span class="exp-tag">Python</span>
+                    <span class="exp-tag">SQL</span>
+                    <span class="exp-tag">ML Collaboration</span>
+                </div>
+            </div>
+
+            <!-- Entreda -->
+            <div class="exp-card fade-in">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-company">Entreda, Inc.</div>
+                        <div class="exp-role">Cyber Risk Consultant</div>
+                    </div>
+                    <span class="exp-date">Jun 2019 — Aug 2019</span>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Engineered client risk assessments adhering to FINRA/ISO/NIST standards with a focus on vendor risk and infrastructure</li>
+                    <li>Conducted proactive threat hunting targeting scam networks, credential leaks, and BEC campaigns</li>
+                    <li>Participated in red/blue team scenario development to simulate cyber-espionage and insider threat behaviors</li>
+                </ul>
+                <div class="exp-tags">
+                    <span class="exp-tag">NIST</span>
+                    <span class="exp-tag">FINRA</span>
+                    <span class="exp-tag">Red/Blue Team</span>
+                    <span class="exp-tag">IDS</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="section">
+    <div class="container">
+        <div class="fade-in">
+            <div class="section-label">Skills</div>
+            <div class="section-title">Technical toolkit.</div>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-group fade-in">
+                <h3><i class="fas fa-brain"></i> AI & Intelligence</h3>
+                <div class="skill-items">
+                    <span class="skill-item">Cursor</span>
+                    <span class="skill-item">Claude</span>
+                    <span class="skill-item">Glean</span>
+                    <span class="skill-item">ChatGPT</span>
+                    <span class="skill-item">Recorded Future</span>
+                    <span class="skill-item">Flashpoint</span>
+                    <span class="skill-item">Crowdstrike</span>
+                    <span class="skill-item">Maltego</span>
+                    <span class="skill-item">Shodan</span>
+                </div>
+            </div>
+            <div class="skill-group fade-in">
+                <h3><i class="fas fa-code"></i> Programming & Data</h3>
+                <div class="skill-items">
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">Pandas</span>
+                    <span class="skill-item">Jupyter</span>
+                    <span class="skill-item">SQL</span>
+                    <span class="skill-item">Snowflake</span>
+                    <span class="skill-item">Redshift</span>
+                    <span class="skill-item">HTML/CSS/JS</span>
+                </div>
+            </div>
+            <div class="skill-group fade-in">
+                <h3><i class="fas fa-chart-bar"></i> Visualization & Ops</h3>
+                <div class="skill-items">
+                    <span class="skill-item">Tableau</span>
+                    <span class="skill-item">Elastic</span>
+                    <span class="skill-item">Sigma</span>
+                    <span class="skill-item">Google Chronicle</span>
+                    <span class="skill-item">Jira</span>
+                    <span class="skill-item">Confluence</span>
+                    <span class="skill-item">GitHub</span>
+                </div>
+            </div>
+            <div class="skill-group fade-in">
+                <h3><i class="fas fa-magnifying-glass"></i> Risk & Fraud</h3>
+                <div class="skill-items">
+                    <span class="skill-item">Fraud Detection</span>
+                    <span class="skill-item">MITRE ATT&CK</span>
+                    <span class="skill-item">OSINT</span>
+                    <span class="skill-item">Dark Web Analysis</span>
+                    <span class="skill-item">Actor Attribution</span>
+                    <span class="skill-item">Root Cause Analysis</span>
+                </div>
+            </div>
+            <div class="skill-group fade-in">
+                <h3><i class="fas fa-lock"></i> Compliance & Frameworks</h3>
+                <div class="skill-items">
+                    <span class="skill-item">ISO 31000</span>
+                    <span class="skill-item">NIST</span>
+                    <span class="skill-item">FINRA</span>
+                    <span class="skill-item">Payment Security</span>
+                    <span class="skill-item">Policy Development</span>
+                    <span class="skill-item">Risk Governance</span>
+                </div>
+            </div>
+            <div class="skill-group fade-in">
+                <h3><i class="fas fa-people-group"></i> Leadership</h3>
+                <div class="skill-items">
+                    <span class="skill-item">Cross-Functional Collab</span>
+                    <span class="skill-item">Mentorship</span>
+                    <span class="skill-item">Stakeholder Briefings</span>
+                    <span class="skill-item">Program Management</span>
+                    <span class="skill-item">Intel Sharing</span>
+                    <span class="skill-item">Team Development</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="section">
+    <div class="container">
+        <div class="fade-in">
+            <div class="section-label">Projects</div>
+            <div class="section-title">Side projects & explorations.</div>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <div class="project-icon"><i class="fab fa-python"></i></div>
+                <h3>Python Automation & Analysis</h3>
+                <p>A collection of Python projects spanning anomaly detection in datasets, web scrapers, data visualization tools, and workflow automation scripts.</p>
+                <a href="https://github.com/nikmags/PythonProjects" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="project-card fade-in">
+                <div class="project-icon"><i class="fas fa-database"></i></div>
+                <h3>SQL Data Projects</h3>
+                <p>Examples of complex SQL queries, data handling, transformations, and analysis workflows for managing and extracting insights from large datasets.</p>
+                <a href="https://github.com/nikmags/SQL" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="project-card fade-in">
+                <div class="project-icon"><i class="fas fa-globe"></i></div>
+                <h3>Portfolio Website</h3>
+                <p>This very site — a responsive single-page portfolio built with HTML, CSS, and vanilla JavaScript to showcase my work and experience.</p>
+                <a href="https://github.com/nikmags/Web-Dev" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications -->
+<section id="certs" class="section">
+    <div class="container">
+        <div class="fade-in">
+            <div class="section-label">Certifications & Education</div>
+            <div class="section-title">Credentials.</div>
+        </div>
+        <div class="certs-grid fade-in">
+            <div class="cert-card">
+                <i class="fas fa-shield-halved"></i>
+                <h4>ISO 31000</h4>
+                <p>Risk Management</p>
+            </div>
+            <div class="cert-card">
+                <i class="fab fa-aws"></i>
+                <h4>AWS Cloud Practitioner</h4>
+                <p>Certified</p>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-lock"></i>
+                <h4>CompTIA Security+</h4>
+                <p>Certified</p>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-user-tie"></i>
+                <h4>Amazon Leadership Institute</h4>
+                <p>Graduate</p>
+            </div>
+        </div>
+        <div style="margin-top: 40px; padding: 28px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;" class="fade-in">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <div style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 10px; background: var(--accent-glow); color: var(--accent-light); font-size: 20px;">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <div style="font-size: 16px; font-weight: 600; color: var(--text-primary);">Penn State University</div>
+                    <div style="font-size: 14px; color: var(--text-secondary);">B.S. Security & Risk Analysis | Minor in Information Science & Technology | NSA Certified</div>
+                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">College of Information Sciences and Technology — Class of 2019</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section">
+    <div class="container">
+        <div class="fade-in">
+            <div class="section-label">Contact</div>
+            <div class="section-title">Let's connect.</div>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info fade-in">
+                <h3>Have a question or opportunity?</h3>
+                <p>I'm always interested in hearing about new opportunities at the intersection of security, intelligence, and technology. Feel free to reach out.</p>
+                <div class="contact-links">
+                    <a href="mailto:nikhil.maganti23@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> nikhil.maganti23@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/nikhil-maganti-b647b9100/" target="_blank" class="contact-link">
+                        <i class="fab fa-linkedin"></i> linkedin.com/in/nikhil-maganti
+                    </a>
+                    <a href="https://github.com/nikmags" target="_blank" class="contact-link">
+                        <i class="fab fa-github"></i> github.com/nikmags
+                    </a>
+                </div>
+            </div>
+            <div class="fade-in">
+                <form class="contact-form" name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your name" required>
+                    <input type="email" name="Email" placeholder="Your email" required>
+                    <textarea name="Message" rows="5" placeholder="Your message"></textarea>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                    <div id="form-msg"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/nikhil-maganti-b647b9100/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/nikmags" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:nikhil.maganti23@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2026 Nikhil Maganti. Built with purpose.</p>
+    </div>
+</footer>
+
+<script>
+    // Nav scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile menu
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menu-icon');
+    function toggleMenu() {
+        mobileMenu.classList.toggle('open');
+        menuIcon.className = mobileMenu.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars';
+    }
+    function closeMenu() {
+        mobileMenu.classList.remove('open');
+        menuIcon.className = 'fas fa-bars';
+    }
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Contact form (preserving your Google Sheet integration)
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyfVAWVvl9GwJ5YvQknVZamGlRZZ1e_xo5CL1Y1-kmwT-akZCDnsMttenXQw6adbGHRyw/exec';
+    const form = document.forms['submit-to-google-sheet'];
+    const msg = document.getElementById('form-msg');
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        msg.innerHTML = 'Sending...';
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                msg.innerHTML = '&#10003; Message sent successfully!';
+                setTimeout(() => { msg.innerHTML = ''; }, 5000);
+                form.reset();
+            })
+            .catch(error => {
+                msg.innerHTML = 'Something went wrong. Please try again.';
+                msg.style.color = '#ef4444';
+            });
+    });
+</script>
+</body>
+</html>
